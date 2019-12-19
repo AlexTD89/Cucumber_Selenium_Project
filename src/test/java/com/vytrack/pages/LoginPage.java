@@ -14,8 +14,6 @@ public class LoginPage extends BasePage{
     @FindBy(id="prependedInput")
     public WebElement userName;
 
-
-
     @FindBy(id="prependedInput2")
     public WebElement password;
 
