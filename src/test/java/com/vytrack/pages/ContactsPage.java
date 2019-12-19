@@ -1,11 +1,17 @@
 package com.vytrack.pages;
 
-import com.cybertek.utilities.Driver;
+import com.vytrack.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ContactsPage extends BasePage {
+
+    @FindBy(className = "input-widget")
+    public WebElement pageCount;
+
+
     public ContactsPage() {
         PageFactory.initElements(Driver.get(), this);
     }

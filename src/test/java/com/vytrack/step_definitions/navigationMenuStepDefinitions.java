@@ -7,10 +7,7 @@ import io.cucumber.java.en.When;
 public class navigationMenuStepDefinitions {
 
 
-    @Given("the user is on the login page")
-    public void the_user_is_on_the_login_page() {
-        System.out.println("user is on the page");
-    }
+
 
     @When("the user goes to Fleet, Vehicles")
     public void the_user_goes_to_Fleet_Vehicles() {
