@@ -6,7 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"json:target/cucumber.json"},
+        plugin = {"json:target/cucumber.json",
+                "html:target/default-cucumber-reports"
+        },
         features = "src/test/resources/features",
         glue = "com/vytrack/step_definitions",
         dryRun = false,
@@ -17,7 +19,7 @@ import org.junit.runner.RunWith;
 //        tags = "@login" // will run all the tests that have this tag, in this case this tag is before Feature keyword, means all scenarios
 //        tags = "@login and not @driver" // run all tests with this text except/ignore @driver tag
 //        tags = {"@login"," ~@driver"} // run all tests with this text except/ignore @driver tag
-        tags = "@nav_menu"
+        tags = "@wip"
 )
 public class CukesRunner {
 }
