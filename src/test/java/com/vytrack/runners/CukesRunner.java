@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/vytrack/step_definitions",
-        dryRun = false,
+        dryRun = true,
 //        tags = "@driver", // will execute only this the given scenarios/test with the given tag
 //        tags = {"@driver", "@VYT-123"} // will execute only this the given scenarios/test with the given tags
 //        tags = {"@sales_manager and @VYT-123"} // another way to give 2 tags
