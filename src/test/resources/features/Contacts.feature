@@ -13,7 +13,6 @@ Feature: Contacts page functionality
       | Fleet | Customers | Activities | System |
 
 
-  @wip
   Scenario: login as a given user
     Given the user is on the login page
     When the user logs in using following credentials
@@ -22,3 +21,17 @@ Feature: Contacts page functionality
       | fname    | Mizgin      |
       | lname    | Ayaz        |
     Then the user should be able to login
+
+  @wip
+  Scenario Outline: Login multiple times
+    Given the user is on the login page
+    When the user enters the "<user>" information
+    Then the user should be able to login
+
+    Examples:
+      | user          |
+      | saless manager |
+      | store manager |
+
+
+

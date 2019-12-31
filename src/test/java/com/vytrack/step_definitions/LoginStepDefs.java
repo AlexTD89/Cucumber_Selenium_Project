@@ -53,5 +53,10 @@ public class LoginStepDefs {
         LoginPage loginPage = new LoginPage();
         loginPage.login(username, password);
     }
+
+    @When("the user enters the {string} information")
+    public void the_user_enters_the_information(String user) {
+        new LoginWithParametersDefs().the_user_logs_in_as_a(user);
+    }
 }
 

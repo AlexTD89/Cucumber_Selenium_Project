@@ -33,6 +33,19 @@ public abstract class BasePage {
     @FindBy(linkText = "My User")
     public WebElement myUser;
 
+    @FindBy(linkText = "Activities")
+    public WebElement activitiesTab;
+
+    @FindBy(linkText = "Calendar Events")
+    public WebElement calendarEventsModule;
+
+    @FindBy(linkText = "Customers")
+    public WebElement customersTab;
+
+    @FindBy(linkText = "Accounts")
+    public WebElement accountsModule;
+
+
     public BasePage() {
         PageFactory.initElements(Driver.get(), this);
     }

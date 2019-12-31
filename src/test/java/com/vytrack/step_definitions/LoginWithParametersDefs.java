@@ -23,8 +23,9 @@ public class LoginWithParametersDefs {
 
     @Then("the title should contain {string}")
     public void the_title_should_contain(String expectedTitle) {
-        String actualTitle = Driver.get().getTitle();
-        Assert.assertEquals(expectedTitle,actualTitle);
+
+        BrowserUtils.waitFor(3);
+        Assert.assertTrue("Actual title: " + Driver.get().getTitle(), Driver.get().getTitle().contains(expectedTitle));
     }
 
     @Given("a driver is logged in")
@@ -47,6 +48,31 @@ public class LoginWithParametersDefs {
         Integer actualCount = Integer.parseInt(contactsPage.pageCount.getAttribute("value"));
         Assert.assertEquals(expectedCount, actualCount);
 
+    }
+
+    @Given("the user logs in as a {string}")
+    public void the_user_logs_in_as_a(String user) {
+        String username = null, password = null;
+        Driver.get().get(ConfigurationReader.get("url"));
+        switch (user){
+            case "driver":
+                username = ConfigurationReader.get("driver_username");
+                password = ConfigurationReader.get("driver_password");
+
+                break;
+            case "sales manager":
+                username = ConfigurationReader.get("sales_manager_username");
+                password = ConfigurationReader.get("sales_manager_password");
+                break;
+            case "store manager":
+                username = ConfigurationReader.get("store_manager_username");
+                password = ConfigurationReader.get("store_manager_password");
+                break;
+            default:
+                // Assert.fail -->> just fails the test
+                Assert.fail("Wrong user type provided");
+        }
+        new LoginPage().login(username, password);
     }
 
 }

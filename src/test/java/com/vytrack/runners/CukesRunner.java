@@ -6,12 +6,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"json:target/cucumber.json",
-                "html:target/default-cucumber-reports"
+        plugin = {"json:target/cucumber.json", // it is cucumber plugin used for reporting purposes
+                "html:target/default-cucumber-reports", // place where to save the report
+                "rerun:target/rerun.txt" // it will remember only the failed tests
         },
         features = "src/test/resources/features",
         glue = "com/vytrack/step_definitions",
-        dryRun = true,
+        dryRun = false,
 //        tags = "@driver", // will execute only this the given scenarios/test with the given tag
 //        tags = {"@driver", "@VYT-123"} // will execute only this the given scenarios/test with the given tags
 //        tags = {"@sales_manager and @VYT-123"} // another way to give 2 tags
